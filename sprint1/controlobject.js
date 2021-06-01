@@ -11,6 +11,7 @@ class ControlObject{
 
         this.w = 0;
         this.h = 0;
+        
 // 'addEventListener' - is there mouse movement
         this.element = canvas;
         this.element.addEventListener('mousedown', this.mDown.bind(this));
@@ -26,7 +27,7 @@ class ControlObject{
         // e.offset X or Y is where ever the mouse is clicking on the canvas
         this.xMouseStart = e.offsetX;
         this.yMouseStart = e.offsetY;
-        console.log("mouse down even†");
+        console.log("mouse down event");
         //console.log("xMouse is:"+this.xMouse);
         //console.log("yMouse is:"+this.yMouse);
         //the this.mouseDown turns true, because the mouse is being pressed down
@@ -73,9 +74,7 @@ class ControlObject{
     update(){
         // for loop - goes through the object_set list and prints out every rectangle the user wants to draw
         for(let i = 0; i < this.object_set.length; i++){
-        
             this.object_set[i].update();
-
         }
         
     // finds out what the width and height measurements are, using xMouse/yMouse and the 2 startpoints

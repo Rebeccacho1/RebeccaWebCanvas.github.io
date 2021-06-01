@@ -6,9 +6,9 @@ body
 {
 	margin: 0;
 	padding: 0;
-	color: #333;
+	color: #294242;
 	background-color: #eee;
-	font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+	font: 0.95em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6
@@ -27,7 +27,7 @@ h6 { font-size: .875em; } /* 14px */
 
 p
 {
-	margin: 0 0 1.5em;
+	margin: 0 0 0.5em;
 	line-height: 1.5;
 }
 
@@ -83,13 +83,13 @@ Layout styles
 {
 	max-width: 80em;
 	margin: 0 auto;
-	background-color: #fff;
+	background-color: #f8fbfb;
 }
 
 .header
 {
 	color: #fff;
-	background: #999;
+	background: #73a9a9;
 	padding: 1em 1.25em;
 }
 
@@ -97,8 +97,11 @@ Layout styles
 
 .nav-bar
 {
-	background: #000;
+	background:#7fb0b0;
 	padding: 0;
+  	position: fixed;
+  	top: 0;
+	width: 74em;
 }
 
 .content { padding: 1em 1.25em; }
@@ -106,7 +109,7 @@ Layout styles
 .footer
 {
 	color: #fff;
-	background: #000;
+	background: #73a9a9;
 	padding: 1em 1.25em;
 }
 
@@ -119,6 +122,7 @@ Nav
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	
 }
 
 .nav li
@@ -148,7 +152,7 @@ Nav
 .nav a:hover
 {
 	color: white;
-	background-color: green;
+	background-color: #96ADB6;
 }
 
 .nav a:active
@@ -156,6 +160,7 @@ Nav
 	color: white;
 	background-color: red;
 }
+
 /* -----------------------
 column styles
 ------------------------*/
@@ -180,7 +185,7 @@ Single styles
 .btn
 {
 	color: #fff !important;
-	background-color: royalblue;
+	background-color: #91B2BE;
 	border-color: #222;
 	display: inline-block;
 	padding: .5em 1em;
@@ -199,13 +204,13 @@ Single styles
 .btn:hover
 {
 	color: #fff !important;
-	background-color: green;
+	background-color: #709bab;
 }
 
 .btn:focus
 {
 	color: #fff !important;
-	background-color: black;
+	background-color: #4c7280;
 }
 
 .btn:active
@@ -245,7 +250,7 @@ Single styles
 Wide styles
 ------------------------*/
 
-@media (min-width: 42em)
+@media (min-width: 20em)
 {
 	.header { padding: 1.5em 3em; }
 	.nav-bar { padding: 1em 3em; }
@@ -273,4 +278,4 @@ Wide styles
 		padding: 0;
 		border-bottom: 0;
 	}
-}
+	
