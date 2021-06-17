@@ -1,4 +1,4 @@
-console.log("control object js called")
+console.log("control object js called");
 
 // Constructor for the object that's going to be made on the canvas
 class ControlObject{
@@ -71,20 +71,18 @@ class ControlObject{
 
 // When the mouse releases from the mouse pad, so your finger is being lifted up
     mUp(e){
-        // drawing the rectangle 
+        // drawing the different shapes
         if(this.drag == true){
+            // Rectangle
             if(Buttons.shape_name == "Rectangle"){
                 var temp = new Rectangle(this.xMouseStart, this.yMouseStart, this.w, this.h, "rgba(233,233,233,1)");
                 this.object_set.push(temp);
-
-            }else if(Buttons.shape_name == "Ellipse"){
+            }
+            // Ellipse
+            else if(Buttons.shape_name == "Ellipse"){
                 var temp = new Ellipse(this.xMouseStart, this.yMouseStart, this.w, this.h, "rgba(233,233,233,1)");
                 this.object_set.push(temp);
             }
-            
-            
-            // push it into the object set
-           
             this.drag = false;
         }
         else{
@@ -109,12 +107,13 @@ class ControlObject{
         ctx.stroke();
     }
 
+// the draw function - just moved it so now the code to this.draw in the update function
     draw(){
     }
 
 // update function
     update(){
-        this.backgroundRect(this.xBoundary, this.yBoundary, this.wBoundary, this.hBoundary)
+        this.backgroundRect(this.xBoundary, this.yBoundary, this.wBoundary, this.hBoundary);
         // for loop - goes through the object_set list and prints out every rectangle the user wants to draw
         for(let i = 0; i < this.object_set.length; i++){
             this.object_set[i].update();

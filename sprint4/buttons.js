@@ -1,5 +1,6 @@
 console.log("button js called");
 
+// Contructor for the buttons
 class Buttons{
     constructor(x,y,w,h,text,c1,c2,c3){
         this.x = x;
@@ -18,21 +19,25 @@ class Buttons{
         canvas.addEventListener('mousemove', this.mMove.bind(this));
     }
 
+// When the mouse is clicking - what will happen
     mClick(e){
-        console.log("Clicked");
+    // if the mouse is clicking, it would change the button to be able to draw a rectangle or an ellipse
+    // and also be able to draw the shapes
         if(this.inBounds){
             this.clicked = true;
-            Buttons.shape_name = this.text 
+            //
+            Buttons.shape_name = this.text;
         }
     }
 
+// When the mouse is moving around, the program would check if the mouse is inbounds or not
     mMove(e){
         this.xMouse = e.offsetX;
         this.yMouse = e.offsetY;
         this.inBounds = this.inBoundsCheck(this.xMouse, this.yMouse, this.x, this.y, this.w, this.h);
-        //console.log(this.inBounds);
     }
 
+// the function for the background rectangle - inbounds: like what will happen if it's in bounds and when it's not
     inBoundsCheck(xM, yM, x, y, w, h){
         if(xM > x && xM < x+w && yM > y && yM < y+h){
             return true;
@@ -42,17 +47,21 @@ class Buttons{
         }
     }
 
+// update function
     update(){
         this.draw();
     }
 
+// the draw function
     draw(){
+        // tells the program what to make the rectangle look like. The design/looks of the rectangle and ellipse
         ctx.strokeStyle = this.outline;
         ctx.fillStyle = this.fill;
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.rect(this.x, this.y, this.w, this.h);
 
+        // only allows to draw a rectangle from inbounds
         if(this.inBounds){
             ctx.lineWidth = 1;
             ctx.fillStyle = this.over;
@@ -64,6 +73,7 @@ class Buttons{
         ctx.fill();
         ctx.stroke();
 
+        // the text styles and format
         ctx.fillStyle = this.outline;
         var myFont = "bold 20px, Trebuchet MS', 'Verdana', sans-serif";
         ctx.textBaseline = 'middle';
@@ -72,3 +82,5 @@ class Buttons{
         ctx.fillText(this.text, this.x + this.w/2, this.y + this.h/2);
     }
 }
+// calls the button's name shape which links up to line 29 
+Buttons.shape_name = ""

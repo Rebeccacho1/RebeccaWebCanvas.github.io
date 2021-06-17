@@ -18,7 +18,7 @@ class Rectangle{
         ctx.fillStyle = this.fill;
         ctx.fill();
     }
-
+    
 // update function
     update(){
 // uses the draw function and updates it
@@ -26,26 +26,30 @@ class Rectangle{
     }
 }
 
+// This class holds the basic variable for an ellipse to be produced
 class Ellipse{
-    constructor(centreX, centreY, rw, rh, colour){
-        this.x = centreX + rw/2;
-        this.y = centreY + rh/2;
-        this.rw = Math.abs(rw/2);
-        this.rh = Math.abs(rh/2);
-        this.fill = colour;
-        console.log(this.fill)
+    // constructor for the ellipse - tells the program what each letter is 
+        constructor(centreX, centreY, rw, rh, colour){
+            this.x = centreX + rw/2;
+            this.y = centreY + rh/2;
+            this.rw = Math.abs(rw/2);
+            this.rh = Math.abs(rh/2);
+            this.fill = colour;
+        }
+    
+    // when the mouse is being dragged across the canvas, this is the code to tell the program that it is drawing the shape
+    // also tells the program whether to fill the colour or not
+        draw(){
+            ctx.beginPath();
+            ctx.ellipse(this.x, this.y, this.rw, this.rh, 0, 0, 2*Math.PI);
+            ctx.fillStyle = this.fill;
+            ctx.fill();
+        }
+    
+    // the update function
+        update(){
+            // uses the draw function and updates it
+            this.draw();
+        }
     }
-
-    draw(){
-        ctx.beginPath();
-        //ctx.ellipse(this.x, this.y, this.rw, this.rh, this.fill);
-        ctx.ellipse(this.x, this.y, this.rw, this.rh, 0, 0, 2*Math.PI);
-        //ctx.ellipse(200, 300, 100, 50, 0, 0, 2*Math.PI);
-        ctx.fillStyle = this.fill;
-        ctx.fill();
-    }
-
-    update(){
-        this.draw();
-    }
-}
+    

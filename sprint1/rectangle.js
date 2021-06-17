@@ -11,9 +11,9 @@ class Rectangle{
     this.fill = C1;
     }
 
-// the draw function
+// when the mouse is being dragged across the canvas, this is the code to tell the program that it is drawing a rectangle
+// or whether to fill the colour or not
 draw(){
-  
     ctx.beginPath();
     ctx.rect(this.x, this.y, this.w, this.h);
     ctx.fillStyle = this.fill;

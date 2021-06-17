@@ -1,4 +1,4 @@
-console.log("control object js called")
+console.log("control object js called");
 
 // Constructor for the object that's going to be made on the canvas
 class ControlObject{
@@ -100,12 +100,13 @@ class ControlObject{
         ctx.stroke();
     }
 
+// the draw function - just moved it so now the code to this.draw in the update function
     draw(){
     }
 
 // update function
     update(){
-        this.backgroundRect(this.xBoundary, this.yBoundary, this.wBoundary, this.hBoundary)
+        this.backgroundRect(this.xBoundary, this.yBoundary, this.wBoundary, this.hBoundary);
         // for loop - goes through the object_set list and prints out every rectangle the user wants to draw
         for(let i = 0; i < this.object_set.length; i++){
             this.object_set[i].update();

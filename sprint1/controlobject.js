@@ -1,4 +1,4 @@
-console.log("control object js called")
+console.log("control object js called");
 
 // Constructor for the object that's going to be made on the canvas
 class ControlObject{
@@ -8,7 +8,6 @@ class ControlObject{
         this.xMouseStart = 0;
         this.yMouseStart = 0;
         this.mouseDown = false;
-
         this.w = 0;
         this.h = 0;
         
@@ -51,7 +50,7 @@ class ControlObject{
         console.log(this.h);
         var temp = new Rectangle(this.xMouseStart, this.yMouseStart, this.w, this.h, "rgba(233,233,233,1)");
         // push it into the object set
-        this.object_set.push(temp)
+        this.object_set.push(temp);
         // console log the object set
         console.log(this.object_set.length);
     }
@@ -65,6 +64,7 @@ class ControlObject{
         ctx.stroke();
     }
 
+// drawing the rectangle on the canvas
     draw(){
         this.drawRect(this.xMouseStart, this.yMouseStart, this.w, this.h);
 

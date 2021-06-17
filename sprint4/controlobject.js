@@ -41,7 +41,6 @@ class ControlObject{
 
         // the boundary of the background rectangle
         this.inBounds = this.inBoundsCheck(this.xMouse, this.yMouse, this.xBoundary, this.yBoundary, this.wBoundary, this.hBoundary);
-        console.log(this.inBounds);
         // if the mouse pushes down inside the bounds, the red line appears - which allows the user to draw the rectangle
         if(this.inBounds == true){
             this.drag = true;
@@ -71,20 +70,18 @@ class ControlObject{
 
 // When the mouse releases from the mouse pad, so your finger is being lifted up
     mUp(e){
-        // drawing the rectangle 
+        // drawing the different shapes
         if(this.drag == true){
+            // Rectangle
             if(Buttons.shape_name == "Rectangle"){
-                var temp = new Rectangle(this.xMouseStart, this.yMouseStart, this.w, this.h, "rgba(233,233,233,1)");
-                this.object_set.push(temp);
-
-            }else if(Buttons.shape_name == "Ellipse"){
-                var temp = new Ellipse(this.xMouseStart, this.yMouseStart, this.w, this.h, "rgba(233,233,233,1)");
+                var temp = new Rectangle(this.xMouseStart, this.yMouseStart, this.w, this.h, Colourgrid.colours);
                 this.object_set.push(temp);
             }
-            
-            
-            // push it into the object set
-           
+            // Ellipse
+            else if(Buttons.shape_name == "Ellipse"){
+                var temp = new Ellipse(this.xMouseStart, this.yMouseStart, this.w, this.h, Colourgrid.colours);
+                this.object_set.push(temp);
+            }
             this.drag = false;
         }
         else{
@@ -96,7 +93,7 @@ class ControlObject{
     backgroundRect(x, y, w, h){
         ctx.beginPath();
         ctx.rect(x, y, w, h);
-        ctx.fillStyle = "rgb(0,103,23)";
+        ctx.fillStyle = "rgb(162, 177, 184)";
         ctx.fill(); 
     }
 
@@ -105,10 +102,11 @@ class ControlObject{
         ctx.beginPath();
         ctx.rect(x, y, w, h);
         ctx.lineWidth = 1;
-        ctx.strokeStyle = "rgb(233, 0, 20)";
+        ctx.strokeStyle = "rgb(78, 105, 120)";
         ctx.stroke();
     }
 
+// the draw function - just moved it so now the code to this.draw in the update function
     draw(){
     }
 
