@@ -55,7 +55,9 @@ class Ellipse{
     
 // This class holds the basic variable for an ellipse to be produced
 class Star{
+    // constructor for the star
     constructor(xC, yC, w, h, n, c1){
+        //Math.abs is the absolute value - so it can always be positive
         this.xC = Math.abs(xC + w/2);
         this.yC = Math.abs(yC + h/2);
         this.w = w;
@@ -64,14 +66,18 @@ class Star{
         this.fillcolour = c1
     }
 
+// the update function
     update(){
+        // uses the draw function and updates it
         this.draw();
     }
-
+// the star is drawn by a small circle (R_small), the inner points 
+//meet the small cirle and points going outside touches the larger circle.
     draw(){
         var n = 2*this.n;
         var x = 0;
         var y = 0;
+        //Maths.min is the lowest value from the this.w and this.h
         var R = Math.min(Math.abs(this.w),Math.abs(this.h))/2;
         var R_small = R/2;
         ctx.fillStyle = this.fillcolour;
@@ -99,7 +105,10 @@ class Star{
     }
 }
 
+// This class holds the basic variable for a Hexagon to be produced
+// A hexagon is similar to a star
 class Hexagon{
+    // constructor for the hexagon
     constructor(xC, yC, w, h, n, c1){
         this.xC = Math.abs(xC + w/2);
         this.yC = Math.abs(yC + h/2);
@@ -109,10 +118,13 @@ class Hexagon{
         this.fillColour = c1;
     }
 
+// the update function
     update(){
+    // uses the draw function and updates it
         this.draw();
     }
 
+    // the hexagon is drawn by a large circle and the 'n' tells the program the number of sides the hexagon should have.
     draw(){
         var n = this.n;
         var x = 0;

@@ -1,13 +1,18 @@
 console.log("main js called");
 
+// setting the canvas (orange rectangle) on the site
 var myT = new ControlObject(canvas,275,25,490,550); 
+// Buttons for each shape
 var B1 = new Buttons(30, 25, 100, 50, "Rectangle", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
 var B2 = new Buttons(150, 25, 100, 50, "Ellipse", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
 var B3 = new Buttons(30, 85, 100, 50, "Star", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
 var B4 = new Buttons(150, 85, 100, 50, "Hexagon", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
+// Button for Clearing the canvas
 var B5 = new Buttons(150, 300, 100, 50, "Clear", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
+// Button for Undoing What the user had drawn on the canvas
 var B6 = new Buttons(150,360, 100, 50, "Undo", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
 
+// loop for my colour swatches
 colourgrids = [];
 var s = 25
 for(var i = 0; i < colArray.length; i++){
@@ -16,6 +21,7 @@ for(var i = 0; i < colArray.length; i++){
         colourgrids.push(temp);
     }
 }
+// Calling the colour swatches onto the canvas
 var C1 = new Colourgrid(10,40,30,30, colArray[0][2], colArray[0][1], colArray[0][3]);
 
 function animate(){
@@ -34,5 +40,5 @@ function animate(){
     }
     window.requestAnimationFrame(animate);
 }
-
+// telling the program to animate
 animate();

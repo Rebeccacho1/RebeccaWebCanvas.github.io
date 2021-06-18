@@ -45,9 +45,11 @@ class ControlObject{
         if(this.inBounds == true){
             this.drag = true;
         }
+        // Clearing the canvas
         else if(Buttons.shape_name == "Clear"){
             this.object_set = [];
         }
+        // Undoing what was made on the canvas
         else if(Buttons.shape_name == "Undo"){
             this.object_set.pop();
         }
@@ -143,6 +145,5 @@ class ControlObject{
         if(this.drag){
             this.draw(this.drawRect(this.xMouseStart, this.yMouseStart, this.w, this.h));
         }
-       //s ctx.restore();
     }
 }
