@@ -21,7 +21,6 @@ class Buttons{
 
 // When the mouse is clicking - what will happen
     mClick(e){
-        console.log("button object click")
     // if the mouse is clicking, it would change the button to be able to draw a rectangle or an ellipse
     // and also be able to draw the shapes
         if(this.inBounds){
@@ -32,7 +31,6 @@ class Buttons{
 
 // When the mouse is moving around, the program would check if the mouse is inbounds or not
     mMove(e){
-       
         this.xMouse = e.offsetX;
         this.yMouse = e.offsetY;
         this.inBounds = this.inBoundsCheck(this.xMouse, this.yMouse, this.x, this.y, this.w, this.h);

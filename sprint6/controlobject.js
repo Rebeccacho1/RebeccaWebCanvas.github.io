@@ -35,7 +35,6 @@ class ControlObject{
 
 // When the mouse is being pressed 'down'. 
     mDown(e){
-        console.log("control object down")
         // e.offset X or Y is where ever the mouse is clicking on the canvas
         this.xMouseStart = e.offsetX;
         this.yMouseStart = e.offsetY;
@@ -45,6 +44,14 @@ class ControlObject{
         // if the mouse pushes down inside the bounds, the red line appears - which allows the user to draw the rectangle
         if(this.inBounds == true){
             this.drag = true;
+        }
+        // Clearing the canvas
+        else if(Buttons.shape_name == "Clear"){
+            this.object_set = [];
+        }
+        // Undoing what was made on the canvas
+        else if(Buttons.shape_name == "Undo"){
+            this.object_set.pop();
         }
         // if the mouse pushes down outside of the bounds, the red line would not appear
         else{
@@ -71,7 +78,6 @@ class ControlObject{
 
 // When the mouse releases from the mouse pad, so your finger is being lifted up
     mUp(e){
-        console.log("mouse up control")
         // drawing the different shapes
         if(this.drag == true){
             // Rectangle
@@ -91,14 +97,14 @@ class ControlObject{
             }
             // Hexagon
             else if(Buttons.shape_name == "Hexagon"){
+                console.log("Hexagon created")
                 var temp = new Hexagon(this.xMouseStart, this.yMouseStart, this.w, this.h, 6, Colourgrid.colours);
                 this.object_set.push(temp);
             }
             // Line
             else if(Buttons.shape_name == "Line"){
-                var temp = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, 3, Colourgrid.colours);
+                var temp = new Line(this.xMouseStart, this.yMouseStart, this.w, this.h, 3, Colourgrid.colours);
                 this.object_set.push(temp);
-                console.log(this.xMouseStart,this.yMouseStart,this.xMouse,this.yMouse);
             }
             this.drag = false;
         }
@@ -130,18 +136,6 @@ class ControlObject{
 
 // update function
     update(){
-        // Clearing the canvas
-        if(Buttons.shape_name == "Clear"){
-            this.object_set = [];
-            Buttons.shape_name = ""
-
-        }
-        // Undoing what was made on the canvas
-        else if(Buttons.shape_name == "Undo"){
-            this.object_set.pop();
-            Buttons.shape_name = ""
-        }
-
         ctx.save();
         this.backgroundRect(this.xBoundary, this.yBoundary, this.wBoundary, this.hBoundary);
         ctx.clip();
@@ -155,6 +149,9 @@ class ControlObject{
         this.h = this.yMouse - this.yMouseStart;
         if(this.drag){
             this.draw(this.drawRect(this.xMouseStart, this.yMouseStart, this.w, this.h));
+        }
+        if(button.shape == "Brush"){
+            this.object_set.push(new Ellipse(this.xMouseStart, this.yMouseStart, 20, 20));
         }
     }
 }

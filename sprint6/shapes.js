@@ -151,22 +151,21 @@ class Hexagon{
 //A new class creating a line 
 class Line{
     // Line: x_1 , y_1, x_2, y_2, lw, col(rgb string)
-    constructor(x_1, y_1, x_2, y_2, lw, col){
-        this.x_1 = x_1;
-        this.y_1 = y_1;
-        this.x_2 = x_2;
-        this.y_2 = y_2;
+    constructor(x1, y1, x2, y2, lw, col){
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
         this.lw = lw;
         this.fillColour = col;
     }
 
     draw(){
         ctx.beginPath();
-        ctx.moveTo(this.x_1,this.y_1);
-        ctx.lineTo(this.x_2,this.y_2);
+        ctx.moveTo(this.x1,this.y1);
+        ctx.lineTo(this.x2,this.y2);
         ctx.fillStyle = this.fillColour;
         ctx.lineWidth = this.lw;
-        ctx.fill();
         ctx.stroke();
     }
 
