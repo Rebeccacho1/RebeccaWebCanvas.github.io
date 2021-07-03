@@ -54,6 +54,37 @@ class Ellipse{
             this.draw();
         }
     }
+
+
+// This class holds the basic variable for an ellipse to be produced
+class PulsingEllipse{
+    // constructor for the ellipse - tells the program what each letter is 
+        // Hexagon: centreX , centreY, rw, rh, colour(rgb string)
+        constructor(centreX, centreY, rw, rh, colour){
+            this.x = centreX + rw/2;
+            this.y = centreY + rh/2;
+            this.rw = Math.abs(rw/2);
+            this.rh = Math.abs(rh/2);
+            this.fill = colour;
+            this.counter = 0;
+        }
+    
+    // when the mouse is being dragged across the canvas, this is the code to tell the program that it is drawing the shape
+    // also tells the program whether to fill the colour or not
+        draw(){
+            ctx.beginPath();
+           ctx.ellipse(this.x, this.y, 0.5*this.rw*Math.cos(0.05*this.counter)+ 0.5*this.rw, 0.5*this.rh*Math.sin(0.05*this.counter)+ 0.5*this.rh, 0, 0, 2*Math.PI);
+            ctx.fillStyle = this.fill;
+            ctx.fill();
+        }
+    
+    // the update function
+        update(){
+            // uses the draw function and updates it
+            this.draw();
+            this.counter += 1;
+        }
+    }
     
 // This class holds the basic variable for an ellipse to be produced
 class Star{
@@ -167,7 +198,7 @@ class Line{
         ctx.beginPath();
         ctx.moveTo(this.x1,this.y1);
         ctx.lineTo(this.x2,this.y2);
-        ctx.fillStyle = this.fillColour;
+        ctx.strokeStyle = this.fillColour;
         ctx.lineWidth = this.lw;
         ctx.stroke();
     }

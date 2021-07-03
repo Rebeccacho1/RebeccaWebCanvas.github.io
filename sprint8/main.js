@@ -20,16 +20,23 @@ var B11 = new Buttons(30, 75, 90, 40, "Line", "rgb(255,255,255)", "rgb(127, 146,
 var B12 = new Buttons(30, 525, 100, 50, "Clear", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
 // Button for Undoing What the user had drawn on the canvas
 var B13 = new Buttons(150,525, 100, 50, "Undo", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
+// Animated shape button
+var B14 = new Buttons(30, 350, 150, 40, "Animated Ellipse", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
+
 // Text
 var T1 = new Texts(15, 410, 140, 30,"Default Colour:", "rgb(255,255,255)");
 var T2 = new Texts(90, 285, 90, 40, "Brush Sizes", "rgb(255,255,255)");
 var T3 = new Texts(90, 115, 90, 40, "Different Pentagons", "rgb(255,255,255)");
 var T4 = new Texts(90, 135, 90, 40, "(different no. of sides)", "rgb(255,255,255)");
 var T5 = new Texts(100, 210, 90, 40, "Stars (different no. of points)", "rgb(255,255,255)");
-//Circle Buttons - sizing of the brushes
+// Circle Buttons - sizing of the brushes
 var CB1 = new circleButton(70, 330, 5, "B1", "rgb(128,128,128", "rgb(112,128,144");
 var CB2 = new circleButton(140, 330, 10, "B2", "rgb(128,128,128", "rgb(112,128,144");
 var CB3 = new circleButton(210, 330, 15, "B3", "rgb(128,128,128", "rgb(112,128,144");
+// Animated shape button
+//var A = new PulsingEllipse(400,400,100,50,colArray[0][5]);
+
+
 // loop for my colour swatches
 colourgrids = [];
 var s = 25
@@ -62,6 +69,7 @@ function animate(){
     B11.update();
     B12.update();
     B13.update();
+    B14.update();
 
     T1.update();
     T2.update();
@@ -74,6 +82,7 @@ function animate(){
     CB3.update();
 
     CG1.update();
+    //A.update();
     // loop which creates the length of the colourgrid with the number of colours in it
     for(var i = 0; i < colourgrids.length; i++){
         colourgrids[i].update();

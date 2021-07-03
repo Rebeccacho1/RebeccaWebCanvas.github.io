@@ -48,7 +48,20 @@
 <!-- Brief -->
 	<h1>Brief</h1>
 <p><b>What is this program about?</b></p>
-	<p>This computer program that I have programmed is a Website Canva, which allows the user to choose different shapes & colour and draw them on the drawing page.</p>
+	<p>This computer program that I have programmed is a Website Canvas, which uses Javascript and html code to create a working and interactive canvas. 
+	<br>
+	<br>
+	This canvas allows the user to choose different shapes such as a line, rectangle, ellipse, different numbered of pentagon sides (meaning the user 
+	could have a 5 sided pentagon) and different numbered of star points (this means, a user can click a star with 7 points or 5 points). 
+	There are 3 types of brush sizes that a user can choose from. For the finishing touches, I have created a fun animated ellipse which
+	stretches horizontally and vertically. 
+	<br>
+	<br>
+	I have also allowed the user to change colours of their shapes as they create more shapes on the canvas. The colours are picked from the 
+	colour pallet. I have also selected a default colour when the user first uses the canvas. 
+	<br>
+	There is also an undo and clear button for the user incase anything goes wrong. 
+	</p>
 
 <br id="Sprint 1">
 	<hr>
@@ -75,9 +88,9 @@
 	<br>
 	<p><b><u>Reflection</u></b></p>
 	<p><b>Errors and Reflection:</b></p>
-	<p>When I was creating Sprint One, there were not many major or minor errors. The process was created from what I had learnt in the educational videos I watched 
-		in class. I thought about what is the most basic thing I can do for the first sprint? (The Simplicity). I was able to work the click and drag mouse, after
-		 a series of help from the teacher. I have attached a video of what this sprint can do.<br>
+	<p>When I was creating Sprint One, there were not many major or minor errors. The process was created from what I had learnt in the educational videos 
+		I watched in class. I thought about what is the most basic thing I can do for the first sprint? (The Simplicity). What is the minimum product I can show?<br>
+		I was able to work the click and drag mouse, after a series of help from the teacher. I have attached a video of what this sprint can do.<br>
 		A problem that occurs in this sprint was when the mouse goes out of the canvas, the rectangle does not get created.</p>
 	<p><b>Future Steps:</b></p>
 	<p>I’m just taking little steps at a time. Since javascript is still a new language. My next steps are to be able to draw shapes within a boundary - maybe creating a canvas within a canvas.</p>
@@ -127,25 +140,59 @@
 	<p><b><u>Build</u></b></p>
 
 	<p><b>Creating and Testing Program</b></p>
-	<p>In Sprint Two, I have created a background rectangle with a boundary around it, 
-		so the user can only draw shapes within the boundary. The background rectangle acts as, an 
-		already printed rectangle on the canvas board. I did this so the user knows where 
-		to draw on the webpage.</p>
+	<p>In Sprint Two, I have created a drawing rectangle canvas with a boundary around it, 
+		so the user can only draw shapes within the boundary. 
+		<br>
+		<br>
+		The drawing rectangle canvas is an already printed rectangle which acts as a canvas 
+		board for the user to draw on. I did not blend the drawing rectangle canvas with the 
+		outer canvas, so the user would know where to draw.
+		<br>
+		<br>
+		This is shown in my testing video (attached at the bottom of sprint two). In the 
+		first fifteen seconds (0:00 seconds to 0:15 seconds), I checked if the boundary 
+		is happening in the green rectangle. To check this: I had used console log. You 
+		can see, that I click on the canvas and the drawing rectangle canvas corners. 
+		When I click on the canvas corner - it shows it was false, while when I clicked 
+		in the drawing rectangle canvas corners - it shows it was true. Again, this shows 
+		the boundary is working. If the user clicks and drags within the ‘true’ boundary, 
+		the rectangle would appear. This would not work if the user clicks and drags 
+		within the ‘false’ (outside of the drawing rectangle canvas) boundary, so 
+		therefore the rectangle would not appear. 
+		<br>
+		In the testing video, I’ve shown the boundary works by clicking and dragging 
+		at 0:19 seconds to 0:30 seconds.</p>
 	<br>
 	<p><b><u>Reflection</u></b></p>
 	<p><b>Errors:</b></p>
-	<p>There’s one main error in this sprint, a user can draw a rectangle shape from 
-		dragging within the border and moving the mouse out of the border. I have shown
-		 proof that it happened. This was shown in the video I have attached. If a user clicks and 
-		 drags their mouse from outside of the border and moves it into the border, 
-		 the program does not allow the user to draw a rectangle.</p>
+	<p>There’s one main error in this sprint, the user can draw a rectangle by click 
+		and dragging the mouse from the ‘true’ boundary (in the boundary) to the 
+		‘false’ boundary (outside of the boundary). In the testing video, I have 
+		shown where this error occurs at about 0:21 seconds to 0:22 seconds.
+		<br>
+		<br>
+		This error occurs because when the mouse is being pressed down within the 
+		'true' boundary, the program notes down that it can draw a rectangle 
+		here. As the mouse is still pressing (clicks down on the mouse pad) and 
+		drags to when the boundary is 'false' and then releases (when the 
+		user's finger is no longer clicking down on the mouse pad) the mouse, 
+		it would create a rectangle because the program thinks that it is still 
+		within the true boundary even though it's false. The program doesn't 
+		known it's in the false boundary until the mouse is unclicked.
+</p>
 	<p><b>Reflection:</b></p>
-	<p>I think this sprint went successfully well. There is an error which I don't plan 
-		on getting it solved until later on, until I reach sprint 6 or 7.</p>
+	<p>I think sprint two went successfully well. I’m still getting the hang of 
+		javascript, it is an adjustment from python to javascript as I assumed 
+		it would be the same or at least closely the same. The error I have 
+		mentioned above may or might not be solved until I have reached sprint 
+		6 or 7. This is because it’s not the most important thing on my list. I 
+		just needed the basics to be working before I move on to minor details.</p>
 	<p><b>Future Steps:</b></p>
-	<p>In the next sprint, I'm thinking of allowing more different choices of 
-		shapes for the user to draw on the canvas. There are many different 
-		design variations that I could think of at the moment. </p>
+	<p>In the next sprint, I am thinking of allowing the user to have another 
+		shape choices other than a rectangle for the user to draw on the 
+		rectangle drawing canvas. For this to be able to work, a button would 
+		need to be involved. 
+	</p>
 	<br>
 	<p><b>Link to the canvas page:</b></p>
 	<a href="file:///Users/rebeccacho/Documents/Year_13/RebeccaWebCanvas.github.io/sprint2/web_canvas.html">Link to Sprint Two's Canvas' Page </a>
@@ -177,9 +224,9 @@
 <div class="col-container">
 	<div class="col">
 	<h1>Sprint Three</h1>
-	<p><b>Aim:</b><br>The aim of Sprint Three, is to allow the user to click 
-		from the choices of two buttons, which allows them to select a particular 
-		shape and also being able to draw them on the drawing rectangle. </p>
+	<p><b>Aim:</b><br>The aim for Sprint Three is to allow the user to click from the 
+		choices of two buttons, which allows them to select a particular shape and 
+		also being able to draw them on the drawing rectangle.</p>
 	<br>
 	<p><u><b>Plan</b></u></p>
 	<p><b>Sprint (Kanban) Board:</b></p>
@@ -188,22 +235,34 @@
 	<p>Screenshot shown on the far right</p>
 	<br>
 	<p><b><u>Build</u></b></p>
-	<p><b>Program Code</b></p>
 	<p><b>Creating and Testing Program</b></p>
 	<p>.....</p>
 	<br>
 	<p><b><u>Reflection</u></b></p>
-	<p><b>Errors and Reflection:</b></p>
-	<p>....</p>
+	<p><b>Errors</b></p>
+	<p>There are no new errors in this sprint as shown on my testing video. 
+		The same error which I had on sprint two still occurs, as I haven’t resolved it yet. 
+	</p>
+	<p><b>Reflection:</b></p>
+	<p>I personally think sprint three went well. It was rather confusing but it was 
+		manageable. There were a lot of thinking involved for the drawing ellipse 
+		shape as we weren’t given the formula of how to create one. My friends and I 
+		had to research how an ellipse could be created using javascript. This was 
+		one of the many difficult tasks as a lot of coders from the internet said 
+		different things. I have also placed all my code through the javascript code 
+		checker - incase if i had missed a semi-colon.</p>
 	<p><b>Future Steps:</b></p>
-	<p>....</p>
+	<p>In sprint four, I am possibly thinking of adding a colour pallet to add 
+		some colour variety for the user to use. I am also thinking of changing 
+		the colour of the canvas, drawing rectangle canvas and buttons to look 
+		more aesthetically pleasing.</p>
 	<br>
 	<p><b>Link to the canvas page:</b></p>
 	<a href="file:///Users/rebeccacho/Documents/Year_13/RebeccaWebCanvas.github.io/sprint3/web_canvas.html">Link to Sprint Three's Canvas' Page </a>
 	</div>
 
     <div class="col">
-	<img class="img-responsive" src="assets/img/sprint_3_kanban.png" alt="Sprint 3 - kanban board" width="810" height="190">
+	<img class="img-responsive" src="assets/img/sprint_3_kanban.png" alt="Sprint 3 - kanban board" width="810" height="210">
 	<p style="text-align:center">Screenshot of Sprint Three's Kanban Board</p>
 	<br>
 	<img class="img-responsive" src="..." alt="Sprint 3 - planning board" width="400" height="300">
@@ -212,8 +271,8 @@
 	<img class="img-responsive" src="assets/img/sprint_3_gitcommit.png" alt="Sprint 3 - Git Commit" width="320" height="115">
 	<p style="text-align:center">Git Commit for Sprint Three</p>
 	<br>
-	<img class="img-responsive" src="assets/img/sprint_3_codecheck.png" alt="Sprint 2 - Code Checker" width="550" height="255">
-	<p style="text-align:center">Checked Sprint Two's code through the code checker</p>
+	<img class="img-responsive" src="assets/img/sprint_3_codecheck.png" alt="Sprint 3 - Code Checker" width="550" height="255">
+	<p style="text-align:center">Checked Sprint Three's code through the code checker</p>
 	</div>
 	<video class="img-responsive" width="800" controls>
 		<source src="assets/vids/sprint_3.mov" type="video/mp4">
@@ -222,6 +281,55 @@
 		<p style="text-align: center">Testing for Sprint Three</p>
 	</div>
 
+	<br id="Sprint 4">
+	<hr>
+<!-- Sprint 4 -->
+<div class="col-container">
+	<div class="col">
+	<h1>Sprint Four</h1>
+	<p><b>Aim:</b><br>....</p>
+	<br>
+	<p><u><b>Plan</b></u></p>
+	<p><b>Sprint (Kanban) Board:</b></p>
+	<p>Screenshot shown on the far right</p>
+	<p><b>Sprint Planning:</b></p>
+	<p>Screenshot shown on the far right</p>
+	<br>
+	<p><b><u>Build</u></b></p>
+	<p><b>Creating and Testing Program</b></p>
+	<p>.....</p>
+	<br>
+	<p><b><u>Reflection</u></b></p>
+	<p><b>Errors</b></p>
+	<p>....</p>
+	<p><b>Reflection:</b></p>
+	<p>....</p>
+	<p><b>Future Steps:</b></p>
+	<p>....</p>
+	<br>
+	<p><b>Link to the canvas page:</b></p>
+	<a href="file:///Users/rebeccacho/Documents/Year_13/RebeccaWebCanvas.github.io/sprint4/web_canvas.html">Link to Sprint Four's Canvas' Page </a>
+	</div>
+
+    <div class="col">
+	<img class="img-responsive" src="assets/img/sprint_4_kanban.png" alt="Sprint 4 - kanban board" width="810" height="210">
+	<p style="text-align:center">Screenshot of Sprint Four's Kanban Board</p>
+	<br>
+	<img class="img-responsive" src="..." alt="Sprint 4 - planning board" width="400" height="300">
+	<p style="text-align:center">Screenshot of Sprint Four's Planning Board</p>
+	<br>
+	<img class="img-responsive" src="assets/img/sprint_4_gitcommit.png" alt="Sprint 4 - Git Commit" width="320" height="115">
+	<p style="text-align:center">Git Commit for Sprint Four</p>
+	<br>
+	<img class="img-responsive" src="assets/img/sprint_4_codecheck.png" alt="Sprint 4 - Code Checker" width="550" height="255">
+	<p style="text-align:center">Checked Sprint Four's code through the code checker</p>
+	</div>
+	<video class="img-responsive" width="800" controls>
+		<source src="assets/vids/sprint_4.mov" type="video/mp4">
+		Browser does not support this video
+		</video>
+		<p style="text-align: center">Testing for Sprint Four</p>
+	</div>
 <hr>
 <h1> Relevant Implications Summary</h1>
  <hr>

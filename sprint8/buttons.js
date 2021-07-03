@@ -26,6 +26,7 @@ class Buttons{
         if(this.inBounds){
             this.clicked = true;
             Buttons.shape_name = this.text;
+            circleButton.selected = ""
         }
     }
 

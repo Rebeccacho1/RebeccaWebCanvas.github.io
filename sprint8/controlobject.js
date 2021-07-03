@@ -120,12 +120,17 @@ class ControlObject{
                 var temp = new Hexagon(this.xMouseStart, this.yMouseStart, this.w, this.h, 6, Colourgrid.colours);
                 this.object_set.push(temp);
             }
-            
+
             // Line
             else if(Buttons.shape_name == "Line"){
                 var temp = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, 3, Colourgrid.colours);
                 this.object_set.push(temp);
-                console.log(this.xMouseStart,this.yMouseStart,this.xMouse,this.yMouse);
+            }
+
+            //Weird Animated Ellipse 
+            else if(Buttons.shape_name == "Animated Ellipse"){
+                var temp = new PulsingEllipse(this.xMouseStart, this.yMouseStart, this.w, this.h, Colourgrid.colours);
+                this.object_set.push(temp);
             }
             this.drag = false;
         }
@@ -160,13 +165,19 @@ class ControlObject{
         // Clearing the canvas
         if(Buttons.shape_name == "Clear"){
             this.object_set = [];
-            Buttons.shape_name = ""
+            Buttons.shape_name == "";
+            circleButton.selected = "";
 
         }
         // Undoing what was made on the canvas
         else if(Buttons.shape_name == "Undo"){
             this.object_set.pop();
-            Buttons.shape_name == ""
+            console.log("undoing")
+            console.log(Buttons.shape_name)
+            // there was a double equal sign which made an error 
+            Buttons.shape_name = "";
+            
+            circleButton.selected = "";
         }
         ctx.save();
         this.backgroundRect(this.xBoundary, this.yBoundary, this.wBoundary, this.hBoundary);

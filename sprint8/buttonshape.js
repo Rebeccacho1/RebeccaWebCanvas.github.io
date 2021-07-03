@@ -25,6 +25,7 @@ class circleButton{
         //if the mouse is being clicked down within the boundary - it would allow the button to be clicked
         if(this.inBounds){
             circleButton.selected = this.text;
+            Buttons.shape_name = "";
         }
     }
 // when the mouse is moving on the mousepad
