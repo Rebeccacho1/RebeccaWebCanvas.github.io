@@ -1,4 +1,4 @@
-console.log(" init js is called ")
+console.log(" init js is called ");
 
 // basic connection code 
 // shapes the canvas - provides a drawing page
@@ -26,4 +26,4 @@ var colArray=[
     "rgba(200,200,120,0.1)","rgba(253,180,11,0.1)","rgba(22,174,201,0.1)",
     "rgba(18,132,116,0.1)","rgba(77,104,119,0.1)","rgba(41,48,53,0.1)"
     ]
-]
+];

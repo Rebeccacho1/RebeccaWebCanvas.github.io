@@ -17,15 +17,15 @@ var B8 = new Buttons(150,525, 100, 50, "Undo", "rgb(255,255,255)", "rgb(127, 146
 var T1 = new Texts(15,410,140,30,"Default Colour:","rgb(255,255,255)");
 // loop for my colour swatches
 colourgrids = [];
-var s = 25
+var s = 25;
 for(var i = 0; i < colArray.length; i++){
     for(var j = 0; j < colArray[i].length; j++){
-        var temp = new Colourgrid(30+j*s, 440+i*s, s, s, "rgb(139,139,139)", colArray[i][j], colArray[0][3])
+        var temp = new Colourgrid(30+j*s, 440+i*s, s, s, "rgb(139,139,139)", colArray[i][j], colArray[0][3]);
         colourgrids.push(temp);
     }
 }
 // Colour Square
-var CG1 = new Colourgrid(150,410,25,25, "rgb(255,255,255)")
+var CG1 = new Colourgrid(150,410,25,25, "rgb(255,255,255)");
 
 // Calling the colour swatches onto the canvas
 var C1 = new Colourgrid(10,40,30,30, "rgb(139,139,139)", colArray[0][1], "rgb(185,197,202)");

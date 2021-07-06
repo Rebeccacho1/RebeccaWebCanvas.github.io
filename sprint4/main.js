@@ -8,10 +8,10 @@ var B2 = new Buttons(40, 85, 200, 50, "Ellipse", "rgb(255,255,255)", "rgb(127, 1
 
 //loop for my colour swatches
 colourgrids = [];
-var s = 25
+var s = 25;
 for(var i = 0; i < colArray.length; i++){
     for(var j = 0; j < colArray[i].length; j++){
-        var temp = new Colourgrid(30+j*s, 150+i*s, s, s, colArray[0][2], colArray[i][j], colArray[0][3])
+        var temp = new Colourgrid(30+j*s, 150+i*s, s, s, colArray[0][2], colArray[i][j], colArray[0][3]);
         colourgrids.push(temp);
     }
 }
@@ -26,7 +26,7 @@ function animate(){
     B2.update();
     
     for(var i = 0; i < colourgrids.length; i++){
-        colourgrids[i].update()
+        colourgrids[i].update();
     }
     window.requestAnimationFrame(animate);
 }

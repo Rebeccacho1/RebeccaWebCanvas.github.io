@@ -21,7 +21,7 @@ class Buttons{
 
 // When the mouse is clicking - what will happen
     mClick(e){
-        console.log("button object click")
+        console.log("button object click");
     // if the mouse is clicking, it would change the button to be able to draw a rectangle or an ellipse
     // and also be able to draw the shapes
         if(this.inBounds){
@@ -83,4 +83,4 @@ class Buttons{
         ctx.fillText(this.text, this.x + this.w/2, this.y + this.h/2);
     }
 }
-Buttons.shape_name = ""
+Buttons.shape_name = "";

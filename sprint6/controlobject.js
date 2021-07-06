@@ -1,4 +1,4 @@
-console.log("control object js called")
+console.log("control object js called");
 
 // Constructor for the object that's going to be made on the canvas
 class ControlObject{
@@ -35,7 +35,7 @@ class ControlObject{
 
 // When the mouse is being pressed 'down'. 
     mDown(e){
-        console.log("control object down")
+        console.log("control object down");
         // e.offset X or Y is where ever the mouse is clicking on the canvas
         this.xMouseStart = e.offsetX;
         this.yMouseStart = e.offsetY;
@@ -71,7 +71,7 @@ class ControlObject{
 
 // When the mouse releases from the mouse pad, so your finger is being lifted up
     mUp(e){
-        console.log("mouse up control")
+        console.log("mouse up control");
         // drawing the different shapes
         if(this.drag == true){
             // Rectangle
@@ -87,7 +87,7 @@ class ControlObject{
             // Star
             else if(Buttons.shape_name == "Star"){
                 var temp = new Star(this.xMouseStart, this.yMouseStart, this.w, this.h, 5, Colourgrid.colours);
-                var temp = new Star(this.xMouse, this.yMouse, 20, 20, 5, Colourgrid.colours)
+                var temp = new Star(this.xMouse, this.yMouse, 20, 20, 5, Colourgrid.colours);
                 this.object_set.push(temp);
             }
             // Hexagon
@@ -134,13 +134,13 @@ class ControlObject{
         // Clearing the canvas
         if(Buttons.shape_name == "Clear"){
             this.object_set = [];
-            Buttons.shape_name = ""
+            Buttons.shape_name = "";
 
         }
         // Undoing what was made on the canvas
         else if(Buttons.shape_name == "Undo"){
             this.object_set.pop();
-            Buttons.shape_name = ""
+            Buttons.shape_name = "";
         }
         ctx.save();
         this.backgroundRect(this.xBoundary, this.yBoundary, this.wBoundary, this.hBoundary);

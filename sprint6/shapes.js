@@ -65,7 +65,7 @@ class Star{
         this.w = w;
         this.h = h;
         this.n = n;
-        this.fillcolour = c1
+        this.fillcolour = c1;
     }
 
 // the update function
@@ -208,4 +208,3 @@ class Texts{
         ctx.fillText(this.text, this.x + this.w/2, this.y + this.h/2);
     }
 }
-

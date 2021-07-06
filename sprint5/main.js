@@ -16,10 +16,10 @@ var myT = new ControlObject(canvas,275,25,490,550);
 
 // loop for my colour swatches
 colourgrids = [];
-var s = 25
+var s = 25;
 for(var i = 0; i < colArray.length; i++){
     for(var j = 0; j < colArray[i].length; j++){
-        var temp = new Colourgrid(30+j*s, 210+i*s, s, s, "rgb(139,139,139)", colArray[i][j], colArray[0][3])
+        var temp = new Colourgrid(30+j*s, 210+i*s, s, s, "rgb(139,139,139)", colArray[i][j], colArray[0][3]);
         colourgrids.push(temp);
     }
 }
@@ -38,7 +38,7 @@ function animate(){
     B7.update();
 
     for(var i = 0; i < colourgrids.length; i++){
-        colourgrids[i].update()
+        colourgrids[i].update();
     }
     window.requestAnimationFrame(animate);
 }
