@@ -9,7 +9,7 @@ var B2 = new Buttons(150, 25, 90, 40, "Ellipse", "rgb(255,255,255)", "rgb(127, 1
 var B3 = new Buttons(20, 170, 60, 40, "3 sides", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
 var B4 = new Buttons(80, 170, 60, 40, "4 sides", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
 var B5 = new Buttons(140, 170, 60, 40, "5 sides", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
-var B6 = new Buttons(200, 170, 60, 40, "6 sides", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)")
+var B6 = new Buttons(200, 170, 60, 40, "6 sides", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
 // Buttons for the number of points in a star
 var B7 = new Buttons(20, 250, 60, 40, "4 points", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
 var B8 = new Buttons(80, 250, 60, 40, "5 points", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
@@ -21,7 +21,9 @@ var B12 = new Buttons(30, 525, 100, 50, "Clear", "rgb(255,255,255)", "rgb(127, 1
 // Button for Undoing What the user had drawn on the canvas
 var B13 = new Buttons(150,525, 100, 50, "Undo", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
 // Animated shape button
-var B14 = new Buttons(30, 350, 150, 40, "Animated Ellipse", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
+var B14 = new Buttons(30, 350, 130, 40, "Animated Ellipse", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
+// Magic Erase Button
+var B15 = new Buttons(170, 350, 90, 40, "Magic Erase", "rgb(255,255,255)", "rgb(127, 146, 158)", "rgb(162, 177, 184)");
 
 // Text
 var T1 = new Texts(15, 410, 140, 30,"Default Colour:", "rgb(255,255,255)");
@@ -39,15 +41,15 @@ var CB3 = new circleButton(210, 330, 15, "B3", "rgb(128,128,128", "rgb(112,128,1
 
 // loop for my colour swatches
 colourgrids = [];
-var s = 25
+var s = 25;
 for(var i = 0; i < colArray.length; i++){
     for(var j = 0; j < colArray[i].length; j++){
-        var temp = new Colourgrid(30+j*s, 440+i*s, s, s, "rgb(139,139,139)", colArray[i][j], colArray[0][3])
+        var temp = new Colourgrid(30+j*s, 440+i*s, s, s, "rgb(139,139,139)", colArray[i][j], colArray[0][3]);
         colourgrids.push(temp);
     }
 }
 // Colour Square
-var CG1 = new Colourgrid(150,410,25,25, "rgb(255,255,255)")
+var CG1 = new Colourgrid(150,410,25,25, "rgb(255,255,255)");
 
 // Calling the colour swatches onto the canvas
 var C1 = new Colourgrid(10,40,30,30, "rgb(139,139,139)", colArray[0][1], "rgb(185,197,202)");
@@ -70,6 +72,7 @@ function animate(){
     B12.update();
     B13.update();
     B14.update();
+    B15.update();
 
     T1.update();
     T2.update();

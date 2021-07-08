@@ -35,7 +35,6 @@ class ControlObject{
 
 // When the mouse is being pressed 'down'. 
     mDown(e){
-        console.log("control object down")
         // e.offset X or Y is where ever the mouse is clicking on the canvas
         this.xMouseStart = e.offsetX;
         this.yMouseStart = e.offsetY;
@@ -71,7 +70,6 @@ class ControlObject{
 
 // When the mouse releases from the mouse pad, so your finger is being lifted up
     mUp(e){
-        console.log("mouse up control")
         // drawing the different shapes
         if(this.drag == true){
             // Rectangle
@@ -167,17 +165,18 @@ class ControlObject{
             this.object_set = [];
             Buttons.shape_name == "";
             circleButton.selected = "";
-
         }
         // Undoing what was made on the canvas
         else if(Buttons.shape_name == "Undo"){
             this.object_set.pop();
-            console.log("undoing")
-            console.log(Buttons.shape_name)
-            // there was a double equal sign which made an error 
             Buttons.shape_name = "";
-            
             circleButton.selected = "";
+        }
+        // Magic Erase
+        if(Buttons.shape_name == "Magic Erase"){
+            this.object_set.pop();
+            Buttons.shape_name == "";
+            circleButton.selected == "";
         }
         ctx.save();
         this.backgroundRect(this.xBoundary, this.yBoundary, this.wBoundary, this.hBoundary);

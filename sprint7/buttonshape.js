@@ -56,7 +56,7 @@ class circleButton{
 // updates what's in the class
     update(){
         ctx.beginPath();
-        ctx.lineWidth = this.outline_stroke
+        ctx.lineWidth = this.outline_stroke;
         ctx.ellipse(this.x, this.y, Math.abs(this.r), Math.abs(this.r), 0, 0, 2*Math.PI);
         ctx.fillStyle = this.fill;
         ctx.strokeStyle = this.outline;

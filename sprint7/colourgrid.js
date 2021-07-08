@@ -71,5 +71,5 @@ class Colourgrid{
     }
 }
 // default colour - White
-Colourgrid.colours = "rgb(255,255,255)"
+Colourgrid.colours = "rgb(255,255,255)";
 

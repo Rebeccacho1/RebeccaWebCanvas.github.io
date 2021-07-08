@@ -73,7 +73,8 @@ class PulsingEllipse{
     // also tells the program whether to fill the colour or not
         draw(){
             ctx.beginPath();
-           ctx.ellipse(this.x, this.y, 0.5*this.rw*Math.cos(0.05*this.counter)+ 0.5*this.rw, 0.5*this.rh*Math.sin(0.05*this.counter)+ 0.5*this.rh, 0, 0, 2*Math.PI);
+            // movement of the animated ellipse. Moves with the cos unit circle and sin unit circle
+            ctx.ellipse(this.x, this.y, 0.5*this.rw*Math.cos(0.05*this.counter)+ 0.5*this.rw, 0.5*this.rh*Math.sin(0.05*this.counter)+ 0.5*this.rh, 0, 0, 2*Math.PI);
             ctx.fillStyle = this.fill;
             ctx.fill();
         }
@@ -96,7 +97,7 @@ class Star{
         this.w = w;
         this.h = h;
         this.n = n;
-        this.fillcolour = c1
+        this.fillcolour = c1;
     }
 
 // the update function

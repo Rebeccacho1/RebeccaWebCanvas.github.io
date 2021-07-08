@@ -26,7 +26,7 @@ class Buttons{
         if(this.inBounds){
             this.clicked = true;
             Buttons.shape_name = this.text;
-            circleButton.selected = ""
+            circleButton.selected = "";
         }
     }
 
@@ -82,4 +82,4 @@ class Buttons{
         ctx.fillText(this.text, this.x + this.w/2, this.y + this.h/2);
     }
 }
-Buttons.shape_name = ""
+Buttons.shape_name = "";

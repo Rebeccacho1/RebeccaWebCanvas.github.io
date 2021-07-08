@@ -25,7 +25,6 @@ class Colourgrid{
             this.clicked = true;
             Colourgrid.colours = this.fill;
         }
-        console.log(Colourgrid.colours);
     }
 
 // when the mouse is moving on the mousepad
@@ -71,4 +70,4 @@ class Colourgrid{
     }
 }
 // default colour - White
-Colourgrid.colours = "rgb(255,255,255)"
+Colourgrid.colours = "rgb(255,255,255)";

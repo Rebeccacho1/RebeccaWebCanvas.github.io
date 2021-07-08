@@ -65,7 +65,7 @@ class Star{
         this.w = w;
         this.h = h;
         this.n = n;
-        this.fillcolour = c1
+        this.fillcolour = c1;
     }
 
 // the update function
