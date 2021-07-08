@@ -407,12 +407,30 @@
 		5.5 on the planning board is a small idea that would be useful for me to improve on. I decided to choose colours for
 		 the colour palette that weren’t the basic rainbow colours. I was trying to keep it original by creating pastel/
 		 soft colours. </p>
-	<p><b>Iterative Decision</b></p>
-	<p>.....</p>
 	<br>
 	<p><b><u>Reflection</u></b></p>
 	<p><b>Errors</b></p>
-	<p>...</p>
+	<p>There were one major error that I have discovered and documented as I was creating this sprint.
+		<br>
+		<br>
+		The error I had found has been screen recorded, this is named "Screen capture of error 1" below the screenshot of the code checker
+		on the far right side of the page. This error was caused by the yMouse and xMouse.<br>
+		The star is made from two circles. There is one circle in the middle of the star (using the 
+		horizontal drag), where the inner points meet (every second point). While, the larger circle (using 
+		the vertical drag) is where the outer points of the star meet. This therefore creates a star.<br>
+		In the error video, from the first 0:05 seconds, the user draws a star by dragging the mouse and a red rectangle 
+		guide line shows up. You can see the horizontal drag (xMouse) is being dragged more than the vertical 
+		drag (yMouse). The vertical drag creates the length of the sides while, the horizontal drag creates 
+		the radius of the circle from the centre.<br>
+		To troubleshoot this error, I had to research on w3schools to see how to fix this error. I came up with 
+		this solution, where I used the smallest maths value either from the xMouse or the yMouse value. I also 
+		had to make sure that no negative values appear so I decided to put an absolute function on those x and 
+		y functions. 
+		<pre style="font-size: 0.9em;">
+		<code class="javascript">
+			var R = Math.min(Math.abs(this.w),Math.abs(this.h))/2;
+			var R_small = R/2;</code>
+		</pre> </p>
 	<p><b>Reflection:</b></p>
 	<p>This sprint was one of my biggest sprints I have done so far. After doing this sprint, it has brought up many other errors 
 		which I have mentioned above. Overall, I’m glad I have done this sprint rather than dragging the number of sprints longer.</p>
@@ -436,6 +454,12 @@
 	<br>
 	<img class="img-responsive" src="assets/img/sprint_5_codecheck.png" alt="Sprint 5 - Code Checker" width="600" height="220">
 	<p style="text-align:center">Checked Sprint Five's code through the code checker</p>
+	<br>
+	<video class="img-responsive" width="800" controls>
+		<source src="assets/vids/sprint5_error1.mov" type="video/mp4">
+		Browser does not support this video
+		</video>
+		<p style="text-align: center">Screen capture of error 1</p>
 	</div>
 	<video class="img-responsive" width="800" controls>
 		<source src="assets/vids/sprint_5.mov" type="video/mp4">
@@ -529,13 +553,47 @@
 	<br>
 	<p><b><u>Build</u></b></p>
 	<p><b>Creating and Testing Program</b></p>
-	<p>.....</p>
+	<p>In sprint 7, I wanted to improve on the different variety of shapes for the user to choose from. I decided to go simple 
+		and use the pre-made shapes that I created to make other shapes from the same family. For example, originally 
+		I had created a hexagon but in this sprint, I decided to change the hexagon to a various different types of 
+		pentagons like: triangles, pentagon and a hexagon. <br>
+		For a star, there were different number of points for each button. There were a 4 pointed star up to a 7 pointed star. 
+		<br>
+		I have also decided to create three different sized brush circles for the user to choose from. This was pretty 
+		difficult as I had to use the ellipse and the button code for it to happen.</p>
 	<p><b>Iterative Decisions:</b></p>
-	<p>.....</p>
+	<p>When I made a circle button, there were a couple of different ways of making this. The first option was to use the 
+		pre-made ellipse function and implement with a button function. This means I didn’t need to make a new class.
+		<br>
+		For the second option, it would involve a copy of the ellipse class with a couple of adjustment. The ellipse class 
+		would be interactive like a button. 
+		<br>
+		<br>
+		I ended up choosing the first option as it was the easier and simpliest way of creating the circle button 
+		without creating a new class.</p>
 	<br>
 	<p><b><u>Reflection</u></b></p>
 	<p><b>Errors</b></p>
-	<p>...</p>
+	<p>There were two major error that I have discovered and documented as I was creating this sprint. The error I 
+		had found has been screen recorded, this is named "Sprint 7 Error - Screen Capture” below the screenshot 
+		of the code checker on the far right side of the page.
+		<br>
+		<br>
+		In the first 10 seconds of the screen capture, the user uses the brush to draw on the canvas. When the 
+		user uses the undo button, it does not undo each individual circle like it did in previous sprints, 
+		instead it undos everything on the canvas until no shapes are left on the canvas. This is a funky error 
+		which I hope I have time to implement it to my future sprints. (Update: In sprint 8, I have decided to 
+		use this error and called it the magic erase button).
+		<br>
+		To trouble shoot this error, I ended up finding out there was an extra equal sign on that one line of 
+		code. Therefore it caused this error.
+		<br>
+		<br>
+		My second error happens after the first error, the user clicks on the button first and then the 7 
+		pointed star after. When the user draws on the canvas, it didn’t create a red outline box. It allowed 
+		the user to draw using a paint brush as well as create a 7 pointed star. To troubleshoot this problem, 
+		I ended up taking a closer look and realised that I forgot to put the code which unselects the 
+		button when the user clicks onto another button. This error was an easy fix.</p>
 	<p><b>Reflection:</b></p>
 	<p>The circle button in this sprint was one of the hardest classes I've made. This was because I couldn't use the premade ellipse class to make 
 		an interactive circle button. I had to make a whole new circle button class for the button to work.</p>
@@ -560,6 +618,10 @@
 	<br>
 	<img class="img-responsive" src="assets/img/sprint_7_codecheck.png" alt="Sprint 7 - Code Checker" width="600" height="220">
 	<p style="text-align:center">Checked Sprint Seven's code through the code checker</p>
+	<br>
+	<video class="img-responsive" width="800" controls> <source src="assets/vids/sprint7_error1.mov" type="video/mp4">
+	Browser does not support this video </video>
+	<p style="text-align: center">Sprint 7 Error - Screen Capture</p>
 	</div>
 	<video class="img-responsive" width="800" controls>
 		<source src="assets/vids/sprint_7.mov" type="video/mp4">
@@ -642,7 +704,60 @@
 
 <br id="RelevantImp">
 <hr>
-<h1> Relevant Implications Summary</h1>
+	<h1> Relevant Implications Summary</h1>
+	<p><b><u>Future Proofing:</u></b></p>
+	<p>Future Proofing is a process which minimises stress in future programmers as they develop or improve in a program. 
+		In other words, it means the program is designed in a specific way which allows future programmers to improve 
+		the program. Future Proofing is important because it is an idea which is preparing for the future, which also 
+		means you are looking beyond your own program’s future.<br>
+		<br>
+		I have a couple of examples which shows I have been using future proofing throughout my program. My first example 
+		which I have done throughout my sprints is adding comments when it is needed or to mention what this section of 
+		the code is about. It is important that all comments are precise and informative.<br>
+		The second example is making buttons on the main.js file. This allows me to delete any button code by one click 
+		or adjust with minimum code changes.<br>
+		My third example is when I’m coding for buttons, any types of shapes or colours, they all have been coded as 
+		if they were objects. This means they are set as objects as they need a set of parameters for them to work, 
+		such as xmouseStart, ymouseStart, xMouse, yMouse (mouse data) and col array for colours. All the buttons, 
+		shapes and colour palette are built on similar structures and are built on the update function. If I was to
+		 give my program to another programer, they would be able to see what I have built and remove or add new 
+		 features or objects.</p>
+		<br>
+	<p><b><u>Functionality</u></b></p>
+	<p>Functionality is checking whether the program is working as we expect it to be. I ask myself these 
+		questions, does the program load quickly? Is my program free from bugs or glitches? Does my program 
+		work in other browsers like Firefox and chrome?
+		<br>
+		<br>
+		My program is free from bugs as there are no glitches. It loads quickly with no immediate errors. I’ve 
+		tested out my program on different browsers and it works like a charm. My program loads quickly on browsers 
+		because most of my program is made up of javascript. Javascript has a very low file size which allows it 
+		to load fast.<br>
+		The Math.abs and Math.min functions were discovered when there were errors in drawing star and hexagon 
+		shapes. I had to use the Math.abs because some objects were given negative values which caused the whole 
+		program to crash. I had to use the Math.min function because there were two values being used instead of 
+		one. This caused the program to form weird star and hexagon shapes on the canvas.<br>
+		My third example was checking the boundaries to see whether the position of the mouse clicking was right.<br>
+		For my fourth example, before any new components were being added into the main program, I have to make 
+		sure that several testing had to be done to make sure there were no problems or errors. Testing 
+		included: sprints - so I can go back if I made a mistake and console logging - used to locate 
+		where exactly the problem occurred.</p>
+	<br>
+	<p><b><u>Usability</u></b></p>
+	<p>Usability is looking at how you could improve my program by having users to test my program while 
+		observing their behaviour as they do so. Again, I ask myself questions like: Can a user avoid and 
+		correct errors? Does it use recognised symbols/conventions?
+		<br>
+		<br>
+		In my program, the first example which shows usability is when the user drags on the canvas. A 
+		red outlined box appears as it draws the shape. This prevents errors that could be avoidable. 
+		It shows where the mouse was being clicked originally. <br>
+		My second example is when the user’s mouse hovers over the buttons, it shows a lighter colour 
+		than the button colour. This allows the user to see what it is interacting with. <br>
+		In my last example, there are different size brushes. I could have put a button with the 
+		radius of the size in words, but not all users know what 0.5 cm looks like visually, so I 
+		decided to create a circle button which visually shows the three different button sizes.</p>
+
  <hr>
  <hr>
 <!-- Paragraphs -->
